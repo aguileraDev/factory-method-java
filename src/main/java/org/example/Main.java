@@ -2,10 +2,10 @@ package org.example;
 
 import org.example.controllers.CreateOrderController;
 import org.example.controllers.FindAllOrdersController;
-import org.example.factory.creator.Chef;
-import org.example.factory.creator.ChefChocolateCake;
-import org.example.factory.creator.ChefHamburguer;
-import org.example.factory.creator.ChefPizza;
+import org.example.factory.creator.ChefFactory;
+import org.example.factory.creator.ChefFactoryChocolateCake;
+import org.example.factory.creator.ChefFactoryHamburguer;
+import org.example.factory.creator.ChefFactoryPizza;
 import org.example.model.Dish;
 import org.example.repository.DishRepository;
 import org.example.service.client.CreateClientImpl;
@@ -23,14 +23,14 @@ public class Main {
     public static void main(String[] args) {
         ConsoleUtil console = new ConsoleUtil();
 
-        Chef chefPizza = new ChefPizza();
-        Dish pizza = chefPizza.prepareDish();
+        ChefFactory chefFactoryPizza = new ChefFactoryPizza();
+        Dish pizza = chefFactoryPizza.prepareDish();
 
-        Chef chocolateCakeChef = new ChefChocolateCake();
-        Dish chocolateCake = chocolateCakeChef.prepareDish();
+        ChefFactory chocolateCakeChefFactory = new ChefFactoryChocolateCake();
+        Dish chocolateCake = chocolateCakeChefFactory.prepareDish();
 
-        Chef chefHamburguer = new ChefHamburguer();
-        Dish burger = chefHamburguer.prepareDish();
+        ChefFactory chefFactoryHamburguer = new ChefFactoryHamburguer();
+        Dish burger = chefFactoryHamburguer.prepareDish();
 
         DishRepository.getInstance().addDish(pizza);
         DishRepository.getInstance().addDish(chocolateCake);

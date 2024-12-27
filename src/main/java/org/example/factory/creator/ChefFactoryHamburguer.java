@@ -1,18 +1,15 @@
 package org.example.factory.creator;
 
-import org.example.factory.Pizza;
+import org.example.factory.Hamburger;
 import org.example.model.Dish;
 
 /**
  * @author Manuel Aguilera / @aguileradev
  */
 // Paso 4 Definir los fabricantes concretos
-public class ChefPizza extends Chef {
-
-
+public class ChefFactoryHamburguer extends ChefFactory {
     @Override
     public Dish prepareDish() {
-        Pizza pizza = new Pizza(1, "Pizza Napolitana", 15.99);
-        return pizza;
+        return new Hamburger(2,"Hamburguesa Doble carne y queso", 15.99);
     }
 }

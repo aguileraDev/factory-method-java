@@ -6,7 +6,7 @@ package org.example.model;
  * @author Manuel Aguilera / @aguileradev
  */
 
-
+//Paso 1 definir producto concreto (clase abstracta o interfaz)
 public abstract class Dish {
     private Integer id;
     private String name;
